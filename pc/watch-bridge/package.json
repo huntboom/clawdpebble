@@ -1,0 +1,7 @@
+{
+  "name": "clawdpebble-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LAN HTTP bridge between a Pebble Time 2 remote and a local OpenClaw gateway",
+  "main": "server.js"
+}

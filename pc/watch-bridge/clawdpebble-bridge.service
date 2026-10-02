@@ -1,0 +1,14 @@
+[Unit]
+Description=ClawdPebble watch bridge (Pebble Time 2 → OpenClaw)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/github/clawdpebble/pc/watch-bridge
+ExecStart=%h/.openclaw/tools/node/bin/node %h/github/clawdpebble/pc/watch-bridge/server.js
+Restart=on-failure
+RestartSec=3
+Environment=PATH=%h/.openclaw/bin:%h/.openclaw/tools/node/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=ClawdPebble public HTTPS tunnel (Cloudflare)
+After=network-online.target clawdpebble-bridge.service
+Wants=network-online.target
+Requires=clawdpebble-bridge.service
+
+[Service]
+Type=simple
+WorkingDirectory=%r
+ExecStart=/usr/bin/python3 %r/scripts/public-tunnel.py
+Restart=always
+RestartSec=5
+Environment=PATH=%h/.local/bin:%h/.openclaw/bin:/usr/bin:/bin
+Environment=CLOUDFLARED_BIN=%h/.local/bin/cloudflared
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,21 @@
+# Build / deps
+watch/build/
+watch/node_modules/
+pc/watch-bridge/node_modules/
+watch/.lock-waf_linux_build
+*.lock-waf*
+
+# Local secrets and machine-specific URLs (never commit)
+.env
+pc/.env
+pc/public-url.txt
+pc/secrets/
+*.pem
+*.key
+
+# Generated watch config with real host + token
+watch/src/embeddedjs/config.js
+watch/src/pkjs/remote-url.js
+
+*.pyc
+.DS_Store

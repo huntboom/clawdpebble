@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claw Remote settings</title>
+  <style>
+    body { font-family: sans-serif; margin: 24px; background: #111; color: #eee; }
+    label { display: block; margin: 12px 0 4px; }
+    input { width: 100%; padding: 8px; font-size: 16px; box-sizing: border-box; }
+    button { margin-top: 16px; padding: 10px 16px; font-size: 16px; }
+    .hint { color: #aaa; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Claw Remote</h1>
+  <p>Use this page from the Pebble app settings if you are not on home Wi-Fi.</p>
+  <p class="hint">Paste the current HTTPS URL from <code>pc/public-url.txt</code> on the PC, plus the bridge token from <code>pc/.env</code>.</p>
+  <form id="f">
+    <label>Bridge URL</label>
+    <input id="host" placeholder="https://your-name.trycloudflare.com">
+    <label>Bridge token</label>
+    <input id="token" placeholder="WATCH_BRIDGE_TOKEN">
+    <button type="submit">Save to watch</button>
+  </form>
+  <script>
+    document.getElementById("f").onsubmit = function (e) {
+      e.preventDefault();
+      var cfg = {
+        host: document.getElementById("host").value.trim().replace(/\/$/, ""),
+        token: document.getElementById("token").value.trim()
+      };
+      location.href = "pebblejs://close#" + encodeURIComponent(JSON.stringify(cfg));
+    };
+  </script>
+</body>
+</html>

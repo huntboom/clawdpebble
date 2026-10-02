@@ -1,0 +1,38 @@
+{
+  "name": "claw-remote",
+  "author": "clawdpebble",
+  "version": "1.0.2",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Claw Remote",
+    "uuid": "053482e0-06bb-4d4e-bfe2-fe63b53a4b57",
+    "projectType": "moddable",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "capabilities": ["configurable"],
+    "targetPlatforms": [
+      "emery",
+      "gabbro"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "messageKeys": [
+      "CONFIG_HOST",
+      "CONFIG_TOKEN",
+      "METHOD",
+      "PATH",
+      "BODY",
+      "HOST",
+      "TOKEN",
+      "OK",
+      "TEXT",
+      "ERROR"
+    ],
+    "resources": {
+      "media": []
+    }
+  }
+}
